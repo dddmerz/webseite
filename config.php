@@ -70,5 +70,11 @@ if (APP_ENV === 'development') {
 */
 
 require_once __DIR__ . '/database.php';
-require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/auth.php';
+
+require_once __DIR__ . '/functions/helpers.php';
+require_once __DIR__ . '/functions/users.php';
+require_once __DIR__ . '/functions/cards.php';
+require_once __DIR__ . '/functions/arena.php';
+require_once __DIR__ . '/functions/battle.php';
+require_once __DIR__ . '/functions/stats.php';
