@@ -1,38 +1,39 @@
-<?php
-declare(strict_types=1);
+<footer>
 
-/*
-|--------------------------------------------------------------------------
-| DeMerzli Arena 2.0
-|--------------------------------------------------------------------------
-| Authentifizierung
-|--------------------------------------------------------------------------
-*/
+<div class="footer-content">
 
-if (!defined('APP_NAME'))
-{
-    exit('Direkter Aufruf nicht erlaubt.');
-}
+<div>
 
-function isLoggedIn(): bool
-{
-    return isset($_SESSION['twitch_user']);
-}
+<h2><?= APP_NAME ?></h2>
 
-function requireLogin(): void
-{
-    if (!isLoggedIn())
-    {
-        redirect(APP_URL . '/login.php');
-    }
-}
+<p>
+Version <?= APP_VERSION ?>
+</p>
 
-function currentUser(): ?array
-{
-    if (!isLoggedIn())
-    {
-        return null;
-    }
+</div>
 
-    return getUserByTwitchId($_SESSION['twitch_id']);
-}
+<div class="footer-links">
+
+<a href="index.php">Start</a>
+
+<a href="cards.php">Karten</a>
+
+<a href="arena.php">Arena</a>
+
+<a href="leaderboard.php">
+Rangliste
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<script src="<?= JS_PATH ?>app.js"></script>
+
+<script src="<?= JS_PATH ?>animations.js"></script>
+
+</body>
+
+</html>
